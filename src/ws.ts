@@ -1,10 +1,10 @@
-import { server } from './app';
-import socketIo from 'socket.io';
+import { httpServer } from "./app";
+import { Server } from "socket.io";
 
-const io = new socketIo.Server(server, {
+const io = new Server(httpServer, {
   cors: {
-    origin: '*'
-  }
+    origin: "*",
+  },
 });
 
 export { io };
